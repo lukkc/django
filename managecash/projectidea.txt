@@ -1,0 +1,13 @@
+atributos =====
+
+    - categoria
+    - title
+    - valor
+
+functions =====
+
+    - adicionar uma nova saida (categoria, title, valor)
+    - remove uma saida
+    - alterar uma saída
+    - listar todas as saidas
+    - mostrar total

@@ -1,0 +1,11 @@
+ul {
+    position: relative;
+    padding: 28px;
+    box-sizing: border-box;
+    width: 410px;
+    background-color: #eee;
+}
+
+li {
+    list-style: none;
+}

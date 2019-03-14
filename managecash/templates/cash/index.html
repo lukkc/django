@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1>{{ user }}</h1>
+    <form method="post" action="{% url 'cash:create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">cadastrar</button>
+    </form>
+    <section>
+        {% for cash in cashs %}
+        <ul>
+            <li>titulo: {{ cash.title }}</li>
+            <li>preço: {{ cash.price }}</li>
+            <li>email: {{ cash.user.email }}</li>
+            <li><a href="{% url 'cash:delete' cash.id %}">excluir</a></li>
+            <li><a href="{% url 'cash:edit' cash.id %}">editar</a></li>
+        </ul>
+    {% endfor %}
+    </section>
+
+    <h4>valor total: {{ total_price }}</h4>
+</body>
+</html>
